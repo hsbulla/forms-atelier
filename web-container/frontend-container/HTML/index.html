@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  {% load static %}
+  <link rel="stylesheet" href="{% static "CSS/style.css" %}" />
+  <meta charset="UTF-8">
+  <title>Форма оформления заказа в ателье одежды</title>
+</head>
+<body>
+  <h1>Форма оформления заказа в ателье одежды</h1>
+  <form id="order-form">
+    <label for="manager">Менеджер:</label>
+    <select id="manager" name="manager">
+      <option value="Иванов">Менеджер Иванов</option>
+      <option value="Малышев">Менеджер Малышев</option>
+      <option value="Золотова">Менеджер Золотова</option>
+    </select>
+    
+    <label for="last-name">Фамилия:</label>
+    <input type="text" id="last-name" name="last-name" required>
+    
+    <label for="first-name">Имя:</label>
+    <input type="text" id="first-name" name="first-name" required>
+    
+    <label for="middle-name">Отчество:</label>
+    <input type="text" id="middle-name" name="middle-name" required>
+    
+    <label for="measurements">Измерения (в сантиметрах):</label>
+    <textarea id="measurements" name="measurements" required></textarea>
+    
+    <label for="fabric-type">Тип ткани:</label>
+    <select id="fabric-type" name="fabric-type">
+      <option value="Хлопок">Хлопок</option>
+      <option value="Шелк">Шелк</option>
+      <option value="Шерсть">Шерсть</option>
+    </select>
+    
+    <label for="delivery-option">Способ доставки:</label>
+    <input type="radio" id="delivery-option1" name="delivery-option" value="Самовывоз" required>
+    <label for="delivery-option1">Самовывоз</label>
+    <input type="radio" id="delivery-option2" name="delivery-option" value="Курьерская доставка">
+    <label for="delivery-option2">Курьерская доставка</label>
+    
+    <button type="submit">Сформировать заказ</button>
+  </form>
+  
+  <div id="order-preview">
+    <h2>Предварительный просмотр заказа</h2>
+    <p id="order-details"></p>
+    <button id="confirm-button">Подтвердить</button>
+  </div>
+  
+  <script src="{% static "JS/script.js" %}"></script>
+</body>
+</html>
